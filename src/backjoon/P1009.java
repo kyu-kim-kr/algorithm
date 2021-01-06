@@ -28,7 +28,7 @@ public class P1009 {
             int A = a;
             int count = 0;
 
-            while (a != 10) {
+            while (a % 10 != 0) {
                 count++;
                 if ((a * A) % 10 == A && count > 1) {
                     break;
@@ -37,7 +37,7 @@ public class P1009 {
                 a = (a * A) % 10;
             }
 
-            if (a == 10) {
+            if (a % 10 == 0) {
                 remain.add(10);
             }
 
