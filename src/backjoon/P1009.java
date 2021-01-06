@@ -1,6 +1,7 @@
 package backjoon;
 
 import java.io.*;
+import java.math.BigInteger;
 import java.util.StringTokenizer;
 
 public class P1009 {
@@ -11,16 +12,18 @@ public class P1009 {
         int T = Integer.parseInt(br.readLine());
 
         StringTokenizer st;
+        BigInteger bigNum;
 
         for (int i = 0; i < T; i++) {
             st = new StringTokenizer(br.readLine(), " ");
             int a = Integer.parseInt(st.nextToken());
             int b = Integer.parseInt(st.nextToken());
-            int c = (int)Math.pow(a, b)%10;
-            if (c == 0) {
-                c = 10;
+            bigNum = (BigInteger.valueOf(a).pow(b)).remainder(BigInteger.TEN);
+            if (bigNum == BigInteger.ZERO) {
+                bigNum = BigInteger.TEN;
             }
-            bw.write(c + "\n");
+
+            bw.write(bigNum + "\n");
         }
         bw.flush();
         bw.close();
