@@ -22,15 +22,20 @@ public class P1009 {
             remain.add(a);
             int A = a;
             int count = 0;
-            while (true) {
+
+            while (a != 10) {
                 count++;
-                if (a == A && count > 1) {
+                if ((a * A) % 10 == A && count > 1) {
                     break;
                 }
                 remain.add((a * A) % 10);
-                //TODO : 10의 배수 처리
-                a = (a * A)%10;
+                a = (a * A) % 10;
             }
+
+            if (a == 10) {
+                remain.add(10);
+            }
+
             int indexOfRemain = b % remain.size() - 1;
             if (indexOfRemain == -1) {
                 indexOfRemain = remain.size() - 1;
