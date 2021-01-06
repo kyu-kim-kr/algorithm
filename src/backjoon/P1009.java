@@ -21,13 +21,15 @@ public class P1009 {
             int b = Integer.parseInt(st.nextToken());
             remain.add(a);
             int A = a;
+            int count = 0;
             while (true) {
-                remain.add((int) Math.pow(a, A) % 10);
-                //TODO : 10의 배수 처리
-                a = (a * A)%10;
-                if (a == A) {
+                count++;
+                if (a == A && count > 1) {
                     break;
                 }
+                remain.add((a * A) % 10);
+                //TODO : 10의 배수 처리
+                a = (a * A)%10;
             }
             int indexOfRemain = b % remain.size() - 1;
             if (indexOfRemain == -1) {
