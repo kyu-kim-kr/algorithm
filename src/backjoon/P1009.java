@@ -19,6 +19,11 @@ public class P1009 {
             st = new StringTokenizer(br.readLine(), " ");
             int a = Integer.parseInt(st.nextToken());
             int b = Integer.parseInt(st.nextToken());
+
+            if (a > 10) {
+                a = a % 10;
+            }
+
             remain.add(a);
             int A = a;
             int count = 0;
