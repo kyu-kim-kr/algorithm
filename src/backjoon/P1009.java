@@ -24,21 +24,21 @@ public class P1009 {
                 a = a % 10;
             }
 
+            if (a % 10 == 0) {
+                a = 10;
+            }
+
             remain.add(a);
             int A = a;
             int count = 0;
 
-            while (a % 10 != 0) {
+            while (a % 10 != 0 ) {
                 count++;
                 if ((a * A) % 10 == A && count > 1) {
                     break;
                 }
                 remain.add((a * A) % 10);
                 a = (a * A) % 10;
-            }
-
-            if (a % 10 == 0) {
-                remain.add(10);
             }
 
             int indexOfRemain = b % remain.size() - 1;
