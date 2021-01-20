@@ -1,20 +1,17 @@
 package programmers.p64061;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.stream.Collectors;
 
 public class Solution {
 
     ArrayList<Integer> MovedDolls = new ArrayList<>();
 
-    public int solution(int[][] board, int[] moves) {
-
-        int answer;
-        return answer;
+    public void solution(int[][] board, int[] moves) {
+        moveDolls(board, moves);
+        System.out.println(checkDuplicates());
     }
 
-    private void move(int[][] board, int[] moves) {
+    private void moveDolls(int[][] board, int[] moves) {
 
         for (int i = 0; i < moves.length; i++) {
             for (int j = 0; j < board.length; j++) {
@@ -29,5 +26,23 @@ public class Solution {
             }
 
         }
+        System.out.println(MovedDolls);
+    }
+
+    private int checkDuplicates() {
+        int count = 0;
+
+        for (int i = 0; i < MovedDolls.size(); i++ ) {
+            if (i+1 == MovedDolls.size()) {
+                break;
+            }
+            if (MovedDolls.get(i) == MovedDolls.get(i+1) ) {
+                count += 2;
+                i++;
+            }
+
+        }
+
+        return count;
     }
 }
