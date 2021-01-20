@@ -10,7 +10,7 @@ public class Solution {
         moveDolls(board, moves);
         System.out.println(checkDuplicates());
     }
-
+ㅇ
     private void moveDolls(int[][] board, int[] moves) {
 
         for (int i = 0; i < moves.length; i++) {
